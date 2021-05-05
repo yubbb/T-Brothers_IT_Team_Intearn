@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/leftMenu.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://kit.fontawesome.com/2ce368dfa6.js"></script>
+  <title>Weekly Report</title>
+  <style>
+
+    .content {
+/*      left: 500px;*/
+      height: 99%;
+      margin: 10px 0px 0px 10px;
+      background-color: #f9f9f9;
+    }
+
+    .bar-item {
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      color: white;
+    }
+
+    .top {
+      height: 40px;
+      background-color: white;
+      width: 80%;
+      float: right;
+    }
+
+    .center {
+      padding: 10px;
+      float: left;
+      color: red;
+    }
+
+    .right {
+      padding: 10px;
+      float: right;
+    }
+
+    .section {
+      /*float: left;*/
+      width: 250px;
+      /*ũ������ �۾� Ƣ��� 13%*/
+      padding: 5px;
+      margin: 5px;
+      height: 125px;
+      font-size: 90%;
+      text-align: center;
+      color: white;
+    }
+
+    .topbox {
+      height: 140px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .r1 {
+      font-size: 20px;
+    }
+
+    .r2 {
+      font-size: 300%;
+      /*50px*/
+    }
+
+    .middlebox {
+      height: 84vh;
+      margin-left: 190px;
+      border: solid #f9f9f9;
+    }
+
+    .middlebox1 {
+      width: 99%;
+      background-color: white;
+      margin: 0 10px;
+      height: 83vh;
+      float: left;
+      display: inline-block;
+      overflow-y : scroll;
+    }
+
+    #t1 {
+      background-color: #323A3F;
+    }
+
+    #grocery {
+      border-left: solid 24px #323A3F;
+    }
+    #produce {
+      border-left: solid 24px #4DA617;
+    }
+    #deli {
+      border-left: solid 24px #DB6E20;
+    }
+    #meat {
+      border-left: solid 24px #E02544;
+    }
+    #seafood {
+      border-left: solid 24px #3681C9;
+    }
+    #houseware {
+      border-left: solid 24px #6B4611;
+    }
+
+    th {
+      text-align: center;
+      color: white;
+      font-size: 1.2vw;
+      height: 48px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      /* font-family: Arial, Helvetica, sans-serif; */
+      font-family: Verdana;
+      /* font-family: Georgia; */
+    }
+
+    .nav-item {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 15px;
+      padding: 5px 0;
+    }
+
+    .custom-nav-link {
+      color: white;
+    }
+
+    .nav-item a {
+      padding: 5px 0 5px 15px;
+    }
+
+    .nav-item.active .indicator {
+      position: static;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-color: red;
+      width: 5px;
+      margin-right: 0px;
+      display: inline-block;
+      height: 2rem;
+    }
+
+    label {
+      margin-left: 15px;
+      color: white;
+    }
+
+    .item ul, input[type="checkbox"] {
+      display: none;
+    }
+
+    #menu:checked ~ .multi-level, .item input:checked ~ ul {
+      display: block;
+    }
+
+    .table {
+      padding-bottom: 20px;
+      background-color: white;
+      width: 99%;
+    }
+
+    .bottombox {
+      float: left;
+      left: 0;
+      width: 600px;
+    }
+
+    a,
+    a:hover {
+      color: white;
+    }
+
+    #btn_excel:hover {
+      color: black;
+    }
+
+    #btn_excel {
+      border: none;
+      background-color: #323A3F;
+      border-radius: 3px;
+      color: white;
+      text-decoration: none;
+      margin : 5px;
+      padding: 5px;
+    }
+
+    .search1 {
+      padding: 4px;
+      background-color: #E02544;
+      height: 4rem;
+      margin: 0 10px;
+    }
+
+    .date {
+      color: grey;
+      float: right;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 3px 5px;
+      box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+      width: 260px;
+      margin: 3px;
+    }
+
+    [type="date"] {
+      background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    }
+    [type="date"]::-webkit-inner-spin-button {
+      display: none;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+
+    .other {
+      background-color: white;
+      border-radius: 10px;
+      color: grey;
+      width: 150px;
+      margin-left: 30px;
+    }
+
+
+
+     .table_text {
+       text-align: center;
+     }
+
+     .scroll2::-webkit-scrollbar {
+       width: 5px;
+       height: 5px;
+     }
+
+     .scroll2::-webkit-scrollbar-thumb {
+       background: #666;
+       border-radius: 20px;
+     }
+
+     .scroll2::-webkit-scrollbar-track {
+       background: #ddd;
+       border-radius: 20px;
+     }
+
+      .table_text {
+        text-align: center;
+        font-size: 1vw;
+     }
+@media (max-width: 768px) {
+      .topbox{
+          padding-top: 40px;
+    }
+        #topbox{
+            display: none;
+        }
+        .content{
+             margin-top: 10vw;
+        }
+     .middlebox{
+        margin-left: 0px;
+      }}
+  </style>
+<script>
+let myJSON = {
+   "detailList": [
+       {"wsCode": "C03907OR", "Category": "grocery",  "prodID":"8801117720209","prodKname": "오리온)오카르토-칠리(L)115g*12 ORO)Okarto-Chili","prodSize": "115g*12","regPrice": "9.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C09796K", "Category": "grocery","prodID": "18801117268609","prodKname": "오리온)고소미(L)320g*12 ORO)KOREAN CRACKER BOX","prodSize": "320g*12","regPrice": "10.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C19412K", "Category": "grocery","prodID": "18801117943513","prodKname": "오리온)초코파이 39g*12pc*8 ORO)Choco pie","prodSize": "39g*12pc*8","regPrice": "12.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C98900OR", "Category": "grocery","prodID": "8801117268206","prodKname": "오리온)왕고래밥-볶음양념 56g*24 ","prodSize": "56g*24","regPrice": "5.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C09653K", "Category": "grocery","prodID": "8801062634453","prodKname": "롯데)빈츠 Multi 204g*16 LT)Binch multi","prodSize": "204g*16","regPrice": "8.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C10656CR", "Category": "grocery","prodID": "8801111909266","prodKname": "크라운)참잉 - 치즈레몬 135g*16","prodSize": "135g*16","regPrice": "20.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "FGE260", "Category": "produce","prodID": "678108158192","prodKname": "OH)사각어묵 1kg*10 OH)Squre fish cake","prodSize": "1kg*10","regPrice": "8.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "00033D", "Category": "produce","prodID": "081652000334","prodKname": "이천쌀 40# RheeChun)Rice","prodSize": "40#","regPrice": "28.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "R10116D", "Category": "produce","prodID": "678108101167","prodKname": "자연)두부-찌게 18oz*12 JY)Tofu-Soft","prodSize": "18oz*12","regPrice": "2.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "R19952K", "Category": "produce","prodID": "081652199526","prodKname": "李)한입에 속 떡볶이 616g*12","prodSize": "616g*12","regPrice": "6.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "SP14353", "Category": "produce","prodID": "037600175340","prodKname": "Spam 340g*12 - Lite/Spam-lite","prodSize": "340g*12","regPrice": "8.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C0966CK", "Category": "produce","prodID": "8801062247257","prodKname": "롯데)마가렛트 L 396g*8 LT)Magaret (L)","prodSize": "396g*8","regPrice": "12.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "CM0944K", "Category": "deli","prodID": "8801062273355","prodKname": "롯데)몽쉘 카카오 384g(12pc)*8 ","prodSize": "384g(12pc)*8","regPrice": "8.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C09662K", "Category": "deli","prodID": "8801062273317","prodKname": "롯데)몽쉘 크림 384g(32g*12pc)*8","prodSize": "384g(32g*12pc)*8","regPrice": "7.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C09527K", "Category": "deli","prodID": "8801062144815","prodKname": "롯데)칸쵸 (S)42g*32 LT)Kancho (S)","prodSize": "42g*32","regPrice": "2.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "0998VK", "Category": "deli","prodID": "8801007120294","prodKname": "CJ)요리당 2.45kg*6 CJ)Cooking syrup","prodSize": "2.45kg*6","regPrice": "5.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "F29905K", "Category": "deli","prodID": "081652299059","prodKname": "아씨)요구르트-사과맛 25btls*4/Assi)Yogurt-apple","prodSize": "25btls*4","regPrice": "5.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "F29731K", "Category": "deli","prodID": "081652297314","prodKname": "아씨)생우동짜장국수 1kg*10/Assi)Udon black noodle","prodSize": "1kg*10","regPrice": "6.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "FHM040C", "Category": "deli","prodID": "8803122019026","prodKname": "명가)꽈베기 꼬치어묵 800g*12/MG)Twisted skewer fish cake","prodSize": "800g*12","regPrice": "10.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "NP1206K", "Category": "meat","prodID": "8809296883210","prodKname": "팔도)불짬뽕 139g*4*8/PD)Bul Spicy Seafood Noodle Soup","prodSize": "139g*4*8","regPrice": "9.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "0511PK", "Category": "meat","prodID": "18801039207403","prodKname": "사조)해바라기유 900ml*12 SJ)Sunflower Oil","prodSize": "900ml*12","regPrice": "7.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "04792DS-J316", "Category": "meat","prodID": "8801052728254","prodKname": "청정원)고소한마요네즈 500g*12 CJW)Mayonnaise","prodSize": "500g*12","regPrice": "9.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "0341024TH-G95", "Category": "meat","prodID": "8801052438092","prodKname": "청정원)양념듬뿍쌈장 200g*30 CJW)Mixed bean paste","prodSize": "200g*30","regPrice": "3.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "05296K", "Category": "meat","prodID": "081652052968","prodKname": "아씨)강초1.8L*9 Assi)Strong vinegar","prodSize": "1.8L*9","regPrice": "5.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "0425EK", "Category": "meat","prodID": "18801047170270","prodKname": "동원)쎈쿡약밥 190g*24 DW)Flavored Glutinous Rice","prodSize": "190g*24","regPrice": "14.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "051302DS-K151", "Category": "meat","prodID": "8801052731988","prodKname": " 청정원)겨자분 200g*24 CJW)Mustard powder","prodSize": "200g*24","regPrice": "9.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "03638KB", "Category": "seafood","prodID": "8801045010007","prodKname": "오뚜기)카레 순한맛 1kg*10 OTG)Curry Powder-mild","prodSize": "1kg*10","regPrice": "4.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "03472K", "Category": "seafood","prodID": "081652034728","prodKname": "아씨)볶음짜장 2kg*6 Assi)Fried black soybean sauce","prodSize": "2kg*6","regPrice": "5.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "FGE004", "Category": "seafood","prodID": "678108457219","prodKname": "OH)손수 생칼국수 1kg*10 OH)Sonsu fine chopped noodle","prodSize": "1kg*10","regPrice": "15.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "KC3000T	", "Category": "seafood","prodID": "623431000403","prodKname": "한국)김치 3L HK)Kimchi/","prodSize": "3L","regPrice": "15.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C09796K", "Category": "seafood","prodID": "18801117268609","prodKname": "오리온)고소미(L)320g*12 ORO)KOREAN CRACKER BOX","prodSize": "320g*12","regPrice": "12.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C4203EK", "Category": "houseware","prodID": "18801111115251","prodKname": "크라운)화이트하임 284g*12 CRW)White heim","prodSize": "284g*12","regPrice": "7.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C4203DK", "Category": "houseware","prodID": "8801111115223","prodKname": "크라운)초코하임 284g*12 CRW)Choco heim/CRW)Choco heim/","prodSize": "284g*12","regPrice": "7.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C19420K", "Category": "houseware","prodID": "18801117544611","prodKname": "오리온)초코파이 39g*30pc*6 ORO)Choco Pie/ORO)Choco Pie","prodSize": "39g*30pc*6","regPrice": "12.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"},
+       {"wsCode": "C19470OR", "Category": "houseware","prodID": "18801117121300","prodKname": "오리온)쿠쉬쿠쉬6P 240g*16 ORO)Cuchecuche Cracker","prodSize": "240g*16","regPrice": "11.99","qty":"2","salePrice":"6.99","BBY":"55","SRY":"44","ROB":"33","LGY":"22"}
+   ]
+     }
+$(document).ready(function(){
+       setListItems();
+     });
+
+ function setListItems(){
+     $.each(myJSON.detailList, function (index, row) {
+         addWeeklyReportRow(row,row['Category']);
+         allWeeklyReportRow(row);
+         //$("#search_customer_result").show();
+     });
+ }
+ function addWeeklyReportRow(row,category) {
+ $('#'+category).append(
+     $('<tr class="table_text">').append(
+         //$('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['wsCode']).addClass("tb_cel_center"),
+         $('<td style="text-align:left; border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['prodKname']).addClass("tb_cel_left"),
+         $('<td style="width:15%; padding:12px 0; border:1px solid #BBBBBB; border-right:0">').append(row['prodSize']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['qty']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['regPrice']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:0">').append(row['salePrice']).addClass("tb_cel_left"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:0; color:#E70000; font-weight:bold;">').append(row['BBY']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1; color:#132EAF; font-weight:bold;">').append(row['SRY']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1; color:#F9921D; font-weight:bold;">').append(row['ROB']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1; color:#00CA00; font-weight:bold;">').append(row['LGY']).addClass("tb_cel_center")
+
+ ).on("click",function(){
+     //parent.select_customer('O',row['strCardId'],row['strName'],"1");
+         selectedList(row);
+ }).css("cursor", "pointer"));
+}
+ function allWeeklyReportRow(row) {
+ $('#allItem').append(
+     $('<tr class="table_text">').append(
+         //$('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['wsCode']).addClass("tb_cel_center"),
+         $('<td style="text-align:left; border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['Category']).addClass("tb_cel_left"),
+         $('<td style="text-align:left; border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['prodKname']).addClass("tb_cel_left"),
+         $('<td style="width:15%; padding:12px 0; border:1px solid #BBBBBB; border-right:0">').append(row['prodSize']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['qty']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['regPrice']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:0">').append(row['salePrice']).addClass("tb_cel_left"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:0">').append(row['BBY']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['SRY']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['ROB']).addClass("tb_cel_center"),
+         $('<td style="width:3%; padding:12px 0; border:1px solid #BBBBBB; border-right:1">').append(row['LGY']).addClass("tb_cel_center")
+
+ ).on("click",function(){
+     //parent.select_customer('O',row['strCardId'],row['strName'],"1");
+     //    selectedList(row);
+ }).css("cursor", "pointer"));
+}
+ function fnExcelReport()
+{
+ var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+ var textRange; var j=0;
+ tab = document.getElementById('excelForm'); // id of table
+
+ for(j = 0 ; j < tab.rows.length ; j++)
+ {
+     tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+     //tab_text=tab_text+"</tr>";
+ }
+
+ tab_text=tab_text+"</table>";
+ tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+ tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+ tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+ var ua = window.navigator.userAgent;
+ var msie = ua.indexOf("MSIE ");
+
+ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+ {
+     txtArea1.document.open("txt/html","replace");
+     txtArea1.document.write(tab_text);
+     txtArea1.document.close();
+     txtArea1.focus();
+     sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+ }
+ else                 //other browser not tested on IE 11
+     sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+ return (sa);
+}
+ </script>
+</head>
+
+<body>
+<!-- left menu start-->
+<div class="hidden-xs topbar left10padding marginBottom text-white  justify-content-flex-end">
+  <div class="left"><img src="icons/WFPicon.png" class="img-circle leftIcon"></div>
+  <span class="titleFont right">WEEKLY FLYER MANAGEMENT SYSTEM</span>
+</div>
+</div>
+<div class="container-fluid hidden-xs leftPadding rightPadding bgColor" style="display: flex; align-items: center;">
+  <div class="top-admin d-flex align-items-center text-white pl-4 " id="admin">
+    <span><i class="fas fa-user-circle fa-lg"></i> Admin</span>
+  </div>
+
+  <div class="d-flex flex-fill justify-content-between px-3"
+    style="display:flex; justify-content: space-between; flex-grow: 1; padding:10px">
+    <div class="text-danger left">Deadline: 2 Day 18 Hour 1 min</div>
+    <div class="left">>Date: 2019. 8. 1 - 8</div>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<!--      <span class="text-white" id="logo"><i class="fab fa-wikipedia-w fa-lg"></i></span>-->
+     <div id="logoMobile">
+         <img src="images/hannam-1.png" alt="logo" >
+     </div>
+ </div>
+ <div class="collapse  navbar-collapse" id="myNavbar">
+   <ul class="leftPadding nav navbar-nav">
+      <li class="active">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home <span class="sr-only">(current)</span></a>
+       </li>
+     <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+       </li>
+<!--
+     <li class="nav-item d-flex align-items-center">
+           <div class="indicator"></div>
+           <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+       </li>
+-->
+     <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+       </li>
+<!--
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+       </li>
+-->
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+             list_alt
+           </i> Weekly Report</a>
+       </li>
+       <li class="nav-item d-flex align-items-center" id="item">
+         <div class="item">
+           <div class="indicator"></div>
+             <input type="checkbox" id="A" />
+             <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+             <ul>
+               <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+               <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+             </ul>
+         </div>
+       </li>
+   </ul>
+ </div>
+</div>
+</nav>
+
+<div class="hidden-xs">
+   <div class="d-flex navbar-expand-lg navbar-dark sidebar p-0 flex-column justify-content-start w-100" id="">
+     <ul class="leftPadding navbar-nav mr-auto flex-column">
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home(WEB)<span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+       </li>
+<li class="nav-item d-flex align-items-center">
+           <div class="indicator"></div>
+           <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+       </li>
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="flyerHistory.html"><i class="fas fa-desktop fa-lg"></i> Flyer History</a>
+       </li>
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+       </li>
+       <li class="nav-item d-flex align-items-center">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+       </li>
+       <li class="nav-item d-flex align-items-center active">
+         <div class="indicator"></div>
+         <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+             list_alt
+           </i> Weekly Report</a>
+       </li>
+       <li class="nav-item d-flex align-items-center" id="item2">
+         <div class="item2">
+           <div class="indicator"></div>
+<!--                <input type="checkbox" id="A" />-->
+             <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+             <ul>
+               <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+               <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+             </ul>
+         </div>
+       </li>
+     </ul>
+
+   </div>
+
+</div>
+ <div class="hidden-xs d-flex flex-column justify-content-start w-100" id="logo">
+       <img src="images/hannam-1.png" alt="logo">
+     </div>
+<!-- left menu end-->
+
+<div class="content">
+
+
+ <div class="middlebox">
+
+     <div class="search1">
+         <input type="date" name="fromDate" id="fromDate" class="date">
+         <input type="date" name="toDate" id="toDate" class="date">
+         <input id="btn_excel" type="button" value="ExcelDown" >
+     </div>
+
+         <div class="middlebox1 scroll scroll2 table">
+           <table class="blank">
+             <tr id="t1">
+               <th>Product</th>
+               <th>Size</th>
+               <th>Qty</th>
+               <th>RegPrice</th>
+               <th>SalePrice</th>
+               <th>B</th>
+               <th>S</th>
+               <th>R</th>
+               <th>L</th>
+             </tr>
+             <tbody class="tb" id="grocery"></tbody>
+             <tbody class="tb" id="produce"></tbody>
+             <tbody class="tb" id="deli"></tbody>
+             <tbody class="tb" id="meat"></tbody>
+             <tbody class="tb" id="seafood"></tbody>
+             <tbody class="tb" id="houseware"></tbody>
+           </table>
+         </div>
+
+ </div>
+
+
+ </div>
+ <!-- <div style="disable:none">
+ <table id="excelForm">
+             <tr id="t6">
+               <th>Category</th>
+               <th>Product</th>
+               <th>Size</th>
+               <th>Qty</th>
+               <th>RegPrice</th>
+               <th>SalePrice</th>
+               <th>BBY</th>
+               <th>SRY</th>
+               <th>ROB</th>
+               <th>LGY</th>
+             </tr>
+             <tbody id="allItem"></tbody>
+           </table>
+ </div> -->
+<script>
+ $(function() {
+   var sBtn = $("ul > li");
+   sBtn.find("a").click(function() {
+     sBtn.removeClass("active");
+     $(this).parent().addClass("active");
+   })
+ })
+
+ $(document).ready(function(){
+     $("#btn_excel").click(function(){
+         fnExcelReport();
+     });
+   });
+</script>
+
+
+
+</body>
+
+</html>

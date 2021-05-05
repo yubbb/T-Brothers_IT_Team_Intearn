@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/leftMenu.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://kit.fontawesome.com/2ce368dfa6.js"></script>
+  <title>Branch Flyer Order</title>
+  <style>
+
+
+    .content {
+/*      left: 500px;*/
+      height: 100%;
+/*      margin: 10px 0px 0px 200px;*/
+      background-color: #f9f9f9;
+    }
+
+    .bar-item {
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      color: white;
+    }
+
+    .top {
+      height: 40px;
+      background-color: white;
+      width: 80%;
+      float: right;
+    }
+
+    .center {
+      padding: 10px;
+      float: left;
+      color: red;
+    }
+
+    .right {
+      padding: 10px;
+      float: right;
+    }
+
+    .section {
+      width: 23%;
+      padding: 5px;
+      margin: 10px;
+      height: 18vh;
+      text-align: center;
+    }
+
+    #section1 {
+      background-image: url('images/burnaby.jpg');
+      background-size: 300px 150px;
+      background-repeat: no-repeat;
+    }
+
+      #section2 {
+        background-image: url('images/surrey.jpg');
+        background-size: 300px 150px;
+        background-repeat: no-repeat;
+      }
+
+      #section3 {
+        background-image: url('images/robson.jpg');
+        background-size: 300px 150px;
+        background-repeat: no-repeat;
+      }
+
+      #section4 {
+        background-image: url('images/langley.png');
+        background-size: 300px 150px;
+        background-repeat: no-repeat;
+      }
+
+    .topbox {
+      height: 20vh;
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 0 10px;
+    }
+
+    .blank {
+      height: 59vh;
+      background-color: white;
+      overflow-y: scroll;
+    }
+
+    .r1 {
+      font-size: 200%;
+      font-weight: bold;
+      color: #424242;
+
+    }
+
+    .r2 {
+      font-size: 300%;
+      font-weight: bold;
+      color: navy;
+      /*50px*/
+    }
+
+    .middlebox {
+/*      width : 99%;*/
+      margin: 0 10px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .middlebox1 {
+      background-color: white;
+      height: 63vh;
+      float: left;
+      width: 45%;
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .middlebox2 {
+      background-color: white;
+      height: 63vh;
+      float: right;
+      display: inline-block;
+      width: 55%;
+      margin: 0 8px;
+    }
+
+    th {
+      text-align: center;
+      color: white;
+      font-size: 1vw;
+      padding: 12px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      /* font-family: Arial, Helvetica, sans-serif; */
+      font-family: Verdana;
+      /* font-family: Georgia; */
+    }
+
+    .nav-item {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 15px;
+      padding: 5px 0;
+    }
+
+    .custom-nav-link {
+      color: white;
+    }
+
+    .nav-item a {
+      padding: 5px 0 5px 15px;
+    }
+
+    .nav-item.active .indicator {
+      position: static;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-color: red;
+      width: 5px;
+      margin-right: 0px;
+      display: inline-block;
+      height: 2rem;
+    }
+
+    label {
+      margin-left: 15px;
+      color: white;
+    }
+
+    .item ul, input[type="checkbox"] {
+      display: none;
+    }
+
+    #menu:checked ~ .multi-level, .item input:checked ~ ul {
+      display: block;
+    }
+
+    .table {
+      padding-bottom: 20px;
+    }
+
+    .bottombox {
+      float: left;
+      position: absolute;
+      right: 0;
+      width: 100%;
+    }
+
+    a,
+    a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .buttons {
+      border: none;
+      padding: 5px 15px;
+      background-color: #323A3F;
+      border-radius: 3px;
+      color: white;
+      text-decoration: none;
+      float: right;
+      margin: 15px 10px 0 0;
+      font-family: Vernada;
+    }
+
+    button:hover {
+      color: black;
+    }
+
+    #btn_excel:hover {
+      color: black;
+    }
+
+    #btn_excel {
+      background-color: #323A3F;
+      color: white;
+      border: none;
+      text-decoration: none;
+      border-radius: 3px;
+      text-decoration: none;
+/*      float: right;*/
+      margin-top: 10px;
+    }
+
+    .search1 {
+      padding :0 7px;
+      height : 50px;
+      background-color: #E02544;
+    }
+
+    .search2 {
+      padding : 0 5px;
+      height : 50px;
+      background-color: #3681C9;
+    }
+
+    .hns {
+      background-color: white;
+      border-radius: 10px;
+      color: grey;
+      display: inline-block;
+      padding: 0 10px;
+      margin : 10px;
+    }
+
+    .other {
+      background-color: white;
+      border-radius: 10px;
+      color: grey;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    #t1,
+    #t2 {
+      background-color: grey;
+    }
+
+
+
+    #tr_modal  {
+      background-color:#323A3F;
+    }
+
+
+
+    .scroll2::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    .scroll2::-webkit-scrollbar-thumb {
+      background: #666;
+      border-radius: 20px;
+    }
+
+    .scroll2::-webkit-scrollbar-track {
+      background: #ddd;
+      border-radius: 20px;
+    }
+
+    .table_text {
+      font-size: 1vw;
+      text-align: center;
+    }
+
+    .btn {
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 20px;
+      background-color: white;
+      font-weight: 700;
+      margin: 8px;
+      padding: 0.8%;
+    }
+
+    .close {
+      cursor : pointer;
+    }
+
+  </style>
+<script>
+  let myJSON = {
+      "detailList": [
+          {"wsCode": "C03907OR", "ProdOwnCode": "001",  "prodID":"8801117720209","prodKname": "오리온)오카르토-칠리(L)115g*12 ORO)Okarto-Chili","prodSize": "115g*12","regPrice": "9.99"},
+          {"wsCode": "C09796K", "ProdOwnCode": "001","prodID": "18801117268609","prodKname": "오리온)고소미(L)320g*12 ORO)KOREAN CRACKER BOX","prodSize": "320g*12","regPrice": "10.99"},
+          {"wsCode": "C19412K", "ProdOwnCode": "001","prodID": "18801117943513","prodKname": "오리온)초코파이 39g*12pc*8 ORO)Choco pie","prodSize": "39g*12pc*8","regPrice": "12.99"},
+          {"wsCode": "C98900OR", "ProdOwnCode": "001","prodID": "8801117268206","prodKname": "오리온)왕고래밥-볶음양념 56g*24 ","prodSize": "56g*24","regPrice": "5.99"},
+          {"wsCode": "C09653K", "ProdOwnCode": "001","prodID": "8801062634453","prodKname": "롯데)빈츠 Multi 204g*16 LT)Binch multi","prodSize": "204g*16","regPrice": "8.99"},
+          {"wsCode": "C10656CR", "ProdOwnCode": "001","prodID": "8801111909266","prodKname": "크라운)참잉 - 치즈레몬 135g*16","prodSize": "135g*16","regPrice": "20.99"},
+          {"wsCode": "FGE260", "ProdOwnCode": "001","prodID": "678108158192","prodKname": "OH)사각어묵 1kg*10 OH)Squre fish cake","prodSize": "1kg*10","regPrice": "8.99"},
+          {"wsCode": "00033D", "ProdOwnCode": "001","prodID": "081652000334","prodKname": "이천쌀 40# RheeChun)Rice","prodSize": "40#","regPrice": "28.99"},
+          {"wsCode": "R10116D", "ProdOwnCode": "001","prodID": "678108101167","prodKname": "자연)두부-찌게 18oz*12 JY)Tofu-Soft","prodSize": "18oz*12","regPrice": "2.99"},
+          {"wsCode": "R19952K", "ProdOwnCode": "001","prodID": "081652199526","prodKname": "李)한입에 속 떡볶이 616g*12","prodSize": "616g*12","regPrice": "6.99"},
+          {"wsCode": "SP14353", "ProdOwnCode": "001","prodID": "037600175340","prodKname": "Spam 340g*12 - Lite/Spam-lite","prodSize": "340g*12","regPrice": "8.99"},
+          {"wsCode": "C0966CK", "ProdOwnCode": "001","prodID": "8801062247257","prodKname": "롯데)마가렛트 L 396g*8 LT)Magaret (L)","prodSize": "396g*8","regPrice": "12.99"},
+          {"wsCode": "CM0944K", "ProdOwnCode": "001","prodID": "8801062273355","prodKname": "롯데)몽쉘 카카오 384g(12pc)*8 ","prodSize": "384g(12pc)*8","regPrice": "8.99"},
+          {"wsCode": "C09662K", "ProdOwnCode": "001","prodID": "8801062273317","prodKname": "롯데)몽쉘 크림 384g(32g*12pc)*8","prodSize": "384g(32g*12pc)*8","regPrice": "7.99"},
+          {"wsCode": "C09527K", "ProdOwnCode": "001","prodID": "8801062144815","prodKname": "롯데)칸쵸 (S)42g*32 LT)Kancho (S)","prodSize": "42g*32","regPrice": "2.99"},
+          {"wsCode": "0998VK", "ProdOwnCode": "001","prodID": "8801007120294","prodKname": "CJ)요리당 2.45kg*6 CJ)Cooking syrup","prodSize": "2.45kg*6","regPrice": "5.99"},
+          {"wsCode": "F29905K", "ProdOwnCode": "001","prodID": "081652299059","prodKname": "아씨)요구르트-사과맛 25btls*4/Assi)Yogurt-apple","prodSize": "25btls*4","regPrice": "5.99"},
+          {"wsCode": "F29731K", "ProdOwnCode": "001","prodID": "081652297314","prodKname": "아씨)생우동짜장국수 1kg*10/Assi)Udon black noodle","prodSize": "1kg*10","regPrice": "6.99"},
+          {"wsCode": "FHM040C", "ProdOwnCode": "001","prodID": "8803122019026","prodKname": "명가)꽈베기 꼬치어묵 800g*12/MG)Twisted skewer fish cake","prodSize": "800g*12","regPrice": "10.99"},
+          {"wsCode": "NP1206K", "ProdOwnCode": "001","prodID": "8809296883210","prodKname": "팔도)불짬뽕 139g*4*8/PD)Bul Spicy Seafood Noodle Soup","prodSize": "139g*4*8","regPrice": "9.99"},
+          {"wsCode": "0511PK", "ProdOwnCode": "001","prodID": "18801039207403","prodKname": "사조)해바라기유 900ml*12 SJ)Sunflower Oil","prodSize": "900ml*12","regPrice": "7.99"},
+          {"wsCode": "04792DS-J316", "ProdOwnCode": "001","prodID": "8801052728254","prodKname": "청정원)고소한마요네즈 500g*12 CJW)Mayonnaise","prodSize": "500g*12","regPrice": "9.99"},
+          {"wsCode": "0341024TH-G95", "ProdOwnCode": "001","prodID": "8801052438092","prodKname": "청정원)양념듬뿍쌈장 200g*30 CJW)Mixed bean paste","prodSize": "200g*30","regPrice": "3.99"},
+          {"wsCode": "05296K", "ProdOwnCode": "001","prodID": "081652052968","prodKname": "아씨)강초1.8L*9 Assi)Strong vinegar","prodSize": "1.8L*9","regPrice": "5.99"},
+          {"wsCode": "0425EK", "ProdOwnCode": "001","prodID": "18801047170270","prodKname": "동원)쎈쿡약밥 190g*24 DW)Flavored Glutinous Rice","prodSize": "190g*24","regPrice": "14.99"},
+          {"wsCode": "051302DS-K151", "ProdOwnCode": "001","prodID": "8801052731988","prodKname": " 청정원)겨자분 200g*24 CJW)Mustard powder","prodSize": "200g*24","regPrice": "9.99"},
+          {"wsCode": "03638KB", "ProdOwnCode": "001","prodID": "8801045010007","prodKname": "오뚜기)카레 순한맛 1kg*10 OTG)Curry Powder-mild","prodSize": "1kg*10","regPrice": "4.99"},
+          {"wsCode": "03472K", "ProdOwnCode": "001","prodID": "081652034728","prodKname": "아씨)볶음짜장 2kg*6 Assi)Fried black soybean sauce","prodSize": "2kg*6","regPrice": "5.99"},
+          {"wsCode": "FGE004", "ProdOwnCode": "001","prodID": "678108457219","prodKname": "OH)손수 생칼국수 1kg*10 OH)Sonsu fine chopped noodle","prodSize": "1kg*10","regPrice": "15.99"},
+          {"wsCode": "KC3000T	", "ProdOwnCode": "001","prodID": "623431000403","prodKname": "한국)김치 3L HK)Kimchi/","prodSize": "3L","regPrice": "15.99"},
+          {"wsCode": "C09796K", "ProdOwnCode": "001","prodID": "18801117268609","prodKname": "오리온)고소미(L)320g*12 ORO)KOREAN CRACKER BOX","prodSize": "320g*12","regPrice": "12.99"},
+          {"wsCode": "C4203EK", "ProdOwnCode": "001","prodID": "18801111115251","prodKname": "크라운)화이트하임 284g*12 CRW)White heim","prodSize": "284g*12","regPrice": "7.99"},
+          {"wsCode": "C4203DK", "ProdOwnCode": "001","prodID": "8801111115223","prodKname": "크라운)초코하임 284g*12 CRW)Choco heim/CRW)Choco heim/","prodSize": "284g*12","regPrice": "7.99"},
+          {"wsCode": "C19420K", "ProdOwnCode": "001","prodID": "18801117544611","prodKname": "오리온)초코파이 39g*30pc*6 ORO)Choco Pie/ORO)Choco Pie","prodSize": "39g*30pc*6","regPrice": "12.99"},
+          {"wsCode": "C19470OR", "ProdOwnCode": "001","prodID": "18801117121300","prodKname": "오리온)쿠쉬쿠쉬6P 240g*16 ORO)Cuchecuche Cracker","prodSize": "240g*16","regPrice": "11.99"}
+      ]
+        }
+let popupList = {
+      "searchList": [
+          {"wsCode": "C03907OR", "ProdOwnCode": "001",  "prodID":"8801117720209","prodKname": "오리온)오카르토-칠리(L)115g*12 ORO)Okarto-Chili","prodSize": "115g*12","regPrice": "9.99"},
+          {"wsCode": "C09796K", "ProdOwnCode": "001","prodID": "18801117268609","prodKname": "오리온)고소미(L)320g*12 ORO)KOREAN CRACKER BOX","prodSize": "320g*12","regPrice": "10.99"},
+          {"wsCode": "C19412K", "ProdOwnCode": "001","prodID": "18801117943513","prodKname": "오리온)초코파이 39g*12pc*8 ORO)Choco pie","prodSize": "39g*12pc*8","regPrice": "12.99"},
+          {"wsCode": "C98900OR", "ProdOwnCode": "001","prodID": "8801117268206","prodKname": "오리온)왕고래밥-볶음양념 56g*24 ","prodSize": "56g*24","regPrice": "5.99"},
+          {"wsCode": "C09653K", "ProdOwnCode": "001","prodID": "8801062634453","prodKname": "롯데)빈츠 Multi 204g*16 LT)Binch multi","prodSize": "204g*16","regPrice": "8.99"},
+          {"wsCode": "C10656CR", "ProdOwnCode": "001","prodID": "8801111909266","prodKname": "크라운)참잉 - 치즈레몬 135g*16","prodSize": "135g*16","regPrice": "20.99"},
+          {"wsCode": "FGE260", "ProdOwnCode": "001","prodID": "678108158192","prodKname": "OH)사각어묵 1kg*10 OH)Squre fish cake","prodSize": "1kg*10","regPrice": "8.99"},
+          {"wsCode": "00033D", "ProdOwnCode": "001","prodID": "081652000334","prodKname": "이천쌀 40# RheeChun)Rice","prodSize": "40#","regPrice": "28.99"},
+          {"wsCode": "R10116D", "ProdOwnCode": "001","prodID": "678108101167","prodKname": "자연)두부-찌게 18oz*12 JY)Tofu-Soft","prodSize": "18oz*12","regPrice": "2.99"},
+          {"wsCode": "R19952K", "ProdOwnCode": "001","prodID": "081652199526","prodKname": "李)한입에 속 떡볶이 616g*12","prodSize": "616g*12","regPrice": "6.99"},
+          {"wsCode": "SP14353", "ProdOwnCode": "001","prodID": "037600175340","prodKname": "Spam 340g*12 - Lite/Spam-lite","prodSize": "340g*12","regPrice": "8.99"},
+          {"wsCode": "C0966CK", "ProdOwnCode": "001","prodID": "8801062247257","prodKname": "롯데)마가렛트 L 396g*8 LT)Magaret (L)","prodSize": "396g*8","regPrice": "12.99"},
+          {"wsCode": "CM0944K", "ProdOwnCode": "001","prodID": "8801062273355","prodKname": "롯데)몽쉘 카카오 384g(12pc)*8 ","prodSize": "384g(12pc)*8","regPrice": "8.99"}
+      ]
+        }
+      $(document).ready(function(){
+          console.log("weeklyflyerList  ");
+            //  let myObj = JSON.parse(myJSON);
+        // document.getElementById("weeklyflyerList").innerHTML = myJSON.detailList[1].prodKname;
+          console.log("weeklyflyerList :: "+myJSON.detailList[1].prodKname);
+          setListItems();
+        });
+    function setListItems(){
+        $.each(myJSON.detailList, function (index, row) {
+            addWeeklyFlyerRow(row);
+            //$("#search_customer_result").show();
+        });
+    }
+    function searchItems(){
+        //$("#searchItemList").clear();
+        $.each(popupList.searchList, function (index, row) {
+            searchItemListRow(row);
+            //$("#search_customer_result").show();
+        });
+    }
+    function addWeeklyFlyerRow(row) {
+    $('#branchflyerList').append(
+        $('<tr class="table_text">').append(
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['prodID']).addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['prodKname']).addClass("tb_cel_left"),
+            $('<td style="text-align:left; border:1px solid #BBBBBB; border-right:0">').append(row['prodSize']).addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:1">').append(row['regPrice']).addClass("tb_cel_center")
+    ).on("click",function(){
+        //parent.select_customer('O',row['strCardId'],row['strName'],"1");
+            selectedList(row);
+    }).css("cursor", "pointer"));
+}
+      function selectedList(row){
+           $('#branchflyerSelectedList').append(
+        $('<tr class="table_text">').append(
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['prodKname']).addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['prodSize']).addClass("tb_cel_left"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['regPrice']).addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:1">').append("<input type='text' name='qty' id='qty' value='1' size='2' style='width:50px;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:1">').append("<input type='text' name='salePrice' id='salePrice' value='1.00' size='5' style='width:80px;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append('<i class="fas fa-trash fa-1x" onClick="delete_table_myorder_item(0,this,1)"></i>').addClass("tb_cel_center")
+        ).css("cursor", "pointer"));
+      }
+
+    function selectedListADD(){
+           $('#branchflyerSelectedList').prepend(
+        $('<tr class="table_text">').append(
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append("<input type='text' name='prodKname' id='prodKname' value='' style='width:15vw;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append("<input type='text' name='prodSize' id='prodSize' value='' size='10' style='width:80px;text-align:center;'>").addClass("tb_cel_left"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append("<input type='text' name='regPrice' id='regPrice' value='' size='5' style='width:80px;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:1">').append("<input type='text' name='qty' id='qty' value='1' size='2' style='width:50px;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:1">').append("<input type='text' name='salePrice' id='salePrice' value='1.00' size='5' style='width:80px;text-align:center;'>").addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append('<i class="fas fa-trash fa-1x" onClick="delete_table_myorder_item(0,this,1)"></i>').addClass("tb_cel_center")
+        ).css("cursor", "pointer"));
+      }
+    function searchItemListRow(row){
+           $('#searchItemList').append(
+        $('<tr class="table_text">').append(
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['prodKname']).addClass("tb_cel_center"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0; padding-left:5px;">').append(row['prodSize']).addClass("tb_cel_left"),
+            $('<td style="border:1px solid #BBBBBB; border-right:0">').append(row['regPrice']).addClass("tb_cel_center")
+
+        ).on("click",function(){
+        //parent.select_customer('O',row['strCardId'],row['strName'],"1");
+            selectedList(row);
+    }).css("cursor", "pointer"));
+      }
+    //item 삭제
+function delete_table_myorder_item(item, row, int) {
+  var table = document.getElementById("branchflyerSelectedList");
+  var deleterow = row.parentNode.parentNode.rowIndex;
+  //  console.log("deleterow : "+deleterow);
+  table.deleteRow(deleterow-1);
+}
+  </script>
+</head>
+
+<body>
+  <!-- left menu start-->
+  <div class="hidden-xs topbar left10padding marginBottom text-white  justify-content-flex-end">
+    <div class="left"><img src="icons/WFPicon.png" class="img-circle leftIcon"></div>
+    <span class="titleFont right">WEEKLY FLYER MANAGEMENT SYSTEM</span>
+  </div>
+  </div>
+  <div class="container-fluid hidden-xs leftPadding rightPadding bgColor" style="display: flex; align-items: center;">
+    <div class="top-admin d-flex align-items-center text-white pl-4 " id="admin">
+      <span><i class="fas fa-user-circle fa-lg"></i> Admin</span>
+    </div>
+
+    <div class="d-flex flex-fill justify-content-between px-3"
+      style="display:flex; justify-content: space-between; flex-grow: 1; padding:10px">
+      <div class="text-danger left">Deadline: 2 Day 18 Hour 1 min</div>
+      <div class="left">>Date: 2019. 8. 1 - 8</div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top visible-xs">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+<!--      <span class="text-white" id="logo"><i class="fab fa-wikipedia-w fa-lg"></i></span>-->
+        <div id="logoMobile">
+            <img src="images/hannam-1.png" alt="logo" >
+        </div>
+    </div>
+    <div class="collapse  navbar-collapse" id="myNavbar">
+      <ul class="leftPadding nav navbar-nav">
+         <li class="active">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<!--
+        <li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+-->
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+<!--
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+-->
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item">
+            <div class="item">
+              <div class="indicator"></div>
+                <input type="checkbox" id="A" />
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hidden-xs">
+      <div class="d-flex navbar-expand-lg navbar-dark sidebar p-0 flex-column justify-content-start w-100" id="">
+        <ul class="leftPadding navbar-nav mr-auto flex-column">
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home(WEB)<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="flyerHistory.html"><i class="fas fa-desktop fa-lg"></i> Flyer History</a>
+          </li>
+          <li class="nav-item d-flex align-items-center active">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item2">
+            <div class="item2">
+              <div class="indicator"></div>
+<!--                <input type="checkbox" id="A" />-->
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+</div>
+    <div class="hidden-xs d-flex flex-column justify-content-start w-100" id="logo">
+          <img src="images/hannam-1.png" alt="logo">
+        </div>
+  <!-- left menu end-->
+
+
+  <div class="content">
+    <!-- Page content -->
+
+    <div class="topbox d-flex justify-content-between">
+      <div class="section" id="section1">
+        <a href="#t1">
+          <!-- <img src="images/burnaby.jpg" alt="burnaby" width="250" height="125"> -->
+          <div class="r1">BURNABY</div>
+          <div class="r2">6</div>
+        </a>
+      </div>
+      <div class="section" id="section2">
+        <a href="#t2">
+          <div class="r1">SURREY</div>
+          <div class="r2">8</div>
+        </a>
+      </div>
+      <div class="section" id="section3">
+        <a href="#t3">
+          <div class="r1">ROBSON</div>
+          <div class="r2">5</div>
+        </a>
+      </div>
+      <div class="section" id="section4">
+        <a href="#t4">
+          <div class="r1">LANGLEY</div>
+          <div class="r2">6</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="middlebox">
+
+      <div class="middlebox1">
+        <div class="search1">
+          <div class="hns">
+            &nbsp;&nbsp;<i id="icon_hns" class="fas fa-search fa-1x"></i>&nbsp;&nbsp;<input type="text" style="border:none;width:7vw;" placeholder="HNS 제품검색">
+          </div>
+          <div class="other">
+            &nbsp;&nbsp;<i id="icon_other" class="fas fa-search fa-1x"></i>&nbsp;&nbsp;<input type="text" style="border:none;width:7vw;"  placeholder="타사 가격정보">
+          </div>
+            <input id="btn_excel" type="button" value="ExcelUp">
+        </div>
+        <div class="table blank scroll2">
+          <table>
+            <tr id="t1">
+              <th>Code</th>
+              <th>Product</th>
+              <th>Size</th>
+              <th>Price</th>
+
+            </tr>
+              <tbody id="branchflyerList"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="middlebox2">
+        <div class="search2">
+          <center>
+            <button type="button" class="btn" id="btn1">BURNABY</button>
+            <button type="button" class="btn" id="btn2">SURREY</button>
+            <button type="button" class="btn" id="btn3">ROBSON</button>
+            <button type="button" class="btn" id="btn4">LANGLEY</button>
+              <button type="button" class="btn" id="btn5">ADD</button>
+         </center>
+
+        </div>
+        <div class="table blank scroll2">
+          <table>
+            <tr id="t2">
+              <th>Product</th>
+              <th>Size</th>
+              <th>RegPrice</th>
+              <th>Qty</th>
+              <th>SalePrice</th>
+              <th>Del</th>
+            </tr>
+              <tbody id="branchflyerSelectedList"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottombox">
+      <button class="buttons">Apply</button>
+      <button class="buttons">Edit</button>
+    </div>
+
+    <div id="item_list_div_modal" style="position: absolute; left: 230px; top: 345px; border: 2px solid #666666; width: 450px; height: 355px; display:none; background-color: #ffffff;overflow-y: auto;">
+      <div class="modal-content">
+        <div class="scroll2">
+          <span class="close">&times;</span>
+          <table>
+            <tr id="tr_modal">
+              <th>Product</th>
+              <th>Size</th>
+              <th>Price</th>
+            </tr>
+              <tbody id="searchItemList"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+    <script>
+      $(document).ready(function(){
+        $("#icon_hns").click(function(){
+          $("#item_list_div_modal").toggle();
+            searchItems();
+        });
+      });
+      </script>
+      <script>
+      $(document).ready(function(){
+        $("#icon_other").click(function(){
+          $("#item_list_div_modal").toggle();
+            searchItems();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $(".close").click(function(){
+          $("#item_list_div_modal").hide();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#btn1").click(function(){
+          $(".btn").css("background-color","white");
+            $(".btn").css("color","black");
+              $(this).css("background-color","#47679C");
+                $(this).css("color","white");
+        });
+      });
+      $(document).ready(function(){
+        $("#btn2").click(function(){
+          $(".btn").css("background-color","white");
+            $(".btn").css("color","black");
+              $(this).css("background-color","#47679C");
+                $(this).css("color","white");
+        });
+      });
+      $(document).ready(function(){
+        $("#btn3").click(function(){
+          $(".btn").css("background-color","white");
+            $(".btn").css("color","black");
+              $(this).css("background-color","#47679C");
+                $(this).css("color","white");
+          });
+      });
+      $(document).ready(function(){
+        $("#btn4").click(function(){
+          $(".btn").css("background-color","white");
+            $(".btn").css("color","black");
+              $(this).css("background-color","#47679C");
+                $(this).css("color","white");
+        });
+      });
+          $(document).ready(function(){
+        $("#btn5").click(function(){
+            selectedListADD();
+//          $(".btn").css("background-color","red");
+//            $(".btn").css("color","black");
+//              $(this).css("background-color","#47679C");
+                $(this).css("color","red");
+        });
+      });
+    </script>
+
+    <script>
+      $(function() {
+        var sBtn = $("ul > li");
+        sBtn.find("a").click(function() {
+          sBtn.removeClass("active");
+          $(this).parent().addClass("active");
+        })
+      })
+    </script>
+
+
+
+</body>
+
+</html>
