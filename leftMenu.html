@@ -1,0 +1,135 @@
+<script>
+$(function() {
+          var sBtn = $("ul > li"); //  ul > li �̸� sBtn���� Ī�Ѵ�. (Ŭ���̺�Ʈ�� li�� ���� �ȴ�.)
+      sBtn.find("a").click(function() { // sBtn�� ���� �ִ�  a ã�� Ŭ�� �ϸ�.
+        sBtn.removeClass("active"); // sBtn �ӿ� (active) Ŭ������ ���� �Ѵ�.
+        $(this).parent().addClass("active"); // Ŭ���� a�� (active)Ŭ������ �ִ´�.
+      });
+    });
+</script>
+<link rel="apple-touch-icon" href="icons/WFPicon.png">
+<div class="container-fluid hidden-xs topbar left10padding marginBottom left text-white d-flex justify-content-end">
+    <div class="left"><img src="icons/WFPicon.png" class="img-circle leftIcon"></div>
+    <div class="left"><span class="titleFont right">WEEKLY FLYER MANAGEMENT SYSTEM</span></div>
+  </div>
+  <div class="container-fluid  hidden-xs leftPadding rightPadding bgColor">
+    <div class="top-admin d-flex align-items-center text-white pl-4 " id="admin">
+      <span ><i class="fas fa-user-circle fa-lg"></i> Admin</span>
+    </div>
+
+    <div class="d-flex flex-fill justify-content-between px-3  left">
+      <div class="text-danger left">Deadline: 2 Day 18 Hour 1 min</div>
+      <div class="left">>Date: 2019. 8. 1 - 8</div>
+    </div>
+  </div>
+<nav class="navbar navbar-inverse navbar-fixed-top visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+<!--      <span class="text-white" id="logo"><i class="fab fa-wikipedia-w fa-lg"></i></span>-->
+        <div id="logoMobile">
+            <img src="images/hannam-1.png" alt="logo" >
+        </div>
+    </div>
+    <div class="collapse  navbar-collapse" id="myNavbar">
+      <ul class="leftPadding nav navbar-nav">
+         <li class="active">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<!--
+        <li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+-->
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+<!--
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+-->
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item">
+            <div class="item">
+              <div class="indicator"></div>
+                <input type="checkbox" id="A" />
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+<div class="hidden-xs">
+      <div class="d-flex navbar-expand-lg navbar-dark sidebar p-0 flex-column justify-content-start w-100" id="">
+        <ul class="leftPadding navbar-nav mr-auto flex-column">
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home(WEB)<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="flyerHistory.html"><i class="fas fa-desktop fa-lg"></i> Flyer History</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item">
+            <div class="item">
+              <div class="indicator"></div>
+                <input type="checkbox" id="A" />
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="d-flex flex-column justify-content-start w-100" id="logo">
+          <img src="images/hannam-1.png" alt="logo">
+        </div>
+      </div>
+</div>

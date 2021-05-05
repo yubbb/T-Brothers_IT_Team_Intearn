@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/leftMenu.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://kit.fontawesome.com/2ce368dfa6.js"></script>
+
+  <title>Flyer History</title>
+  <style>
+
+
+    .content {
+/*      left: 500px;*/
+      height: 100%;
+/*      margin: 10px 0px 0px 10px;*/
+      background-color: #f9f9f9;
+    }
+
+    .bar-item {
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      color: white;
+    }
+
+
+    .top {
+      height: 40px;
+      background-color: white;
+      width: 80%;
+      float: right;
+    }
+
+    .center {
+      padding: 10px;
+      float: left;
+      color: red;
+    }
+
+    .right {
+      padding: 10px;
+      float: right;
+    }
+
+    .section {
+      width: 250px;
+      padding: 5px;
+      margin: 5px;
+      height: 125px;
+      font-size: 90%;
+      text-align: center;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .topbox {
+      height: 140px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .flyer {
+      height: 500px;
+      margin: 1rem 0;
+      overflow-y: scroll;
+    }
+    .middlebox {
+      height: 85vh;
+      margin-left: 190px;
+      border: solid #f9f9f9;
+      /* #f9f9f9; */
+    }
+
+    .middlebox1 {
+      background-color: white;
+      margin: 0 5px;
+      padding: 5px;
+      height: 85vh;
+      width: 95%;
+      float: left;
+      display: inline-block;
+    }
+
+
+    th {
+      text-align: center;
+      padding: 5px 200px;
+      color: white;
+      width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      /* font-family: Arial, Helvetica, sans-serif; */
+      font-family: Verdana;
+      /* font-family: Georgia; */
+    }
+
+    .nav-item {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 15px;
+      padding: 5px 0;
+    }
+
+    .custom-nav-link {
+      color: white;
+    }
+
+    .nav-item a {
+      padding: 5px 0 5px 15px;
+    }
+
+    .nav-item.active .indicator {
+      position: static;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-color: red;
+      width: 5px;
+      margin-right: 0px;
+      display: inline-block;
+      height: 2rem;
+    }
+
+    label {
+      margin-left: 15px;
+      color: white;
+    }
+
+    .item ul, input[type="checkbox"] {
+      display: none;
+    }
+
+    #menu:checked ~ .multi-level, .item input:checked ~ ul {
+      display: block;
+    }
+
+    .table {
+      padding-bottom: 20px;
+    }
+
+    .bottombox {
+      float: left;
+      left: 0;
+      width: 600px;
+    }
+
+    a,
+    a:hover {
+      color: white;
+    }
+
+    button {
+      border: none;
+      background-color: #323A3F;
+      color: white;
+      text-decoration: none;
+      float: right;
+      margin-top: 20px;
+    }
+
+    .search1 {
+      padding: 4px;
+      background-color: lightgrey;
+      height: 4rem;
+    }
+
+    #date {
+      color: grey;
+      float: right;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 3px 5px;
+      box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+      width: 260px;
+      margin: 3px;
+    }
+
+    [type="date"] {
+      background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    }
+    [type="date"]::-webkit-inner-spin-button {
+      display: none;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+
+    .hns {
+      height: 490px;
+      width: 60%;
+      float: left;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .other {
+      background-color: white;
+      border-radius: 10px;
+      color: grey;
+      width: 40%;
+      margin-left: 30px;
+      float: right;
+    }
+
+    #t1,
+    #t2 {
+      background-color: grey;
+    }
+
+    .box {
+      width: 100%;
+      height: 70vh;
+    }
+
+    .container{
+      height : 38vh;
+      float : left;
+      min-width: 100%;
+      padding: 5px 0;
+      margin: 10px 0;
+    }
+
+    .container1{
+      height: 34vh;
+      width: 31%;
+      margin: 5px;
+      float: left;
+      text-align: center;
+    }
+
+
+    img {
+      max-width:100%;
+      max-height: 100%;
+    }
+
+    .confirm {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    }
+
+    .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+
+
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    padding-left: 8px;
+  }
+
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+
+
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+  .modal-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+
+
+  .modal-hover-opacity {
+    opacity:1;
+    filter:alpha(opacity=100);
+    -webkit-backface-visibility:hidden
+  }
+
+  .modal-hover-opacity:hover {
+    opacity:0.60;
+    filter:alpha(opacity=60);
+    -webkit-backface-visibility:hidden
+  }
+
+  .close {
+    text-decoration:none;
+    float:right;
+    font-size:24px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+  }
+
+  .modal-content, #caption {
+
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+  }
+
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+
+@media (max-width: 768px) {
+      .topbox{
+          padding-top: 40px;
+    }
+        #topbox{
+            display: none;
+        }
+        .content{
+/*             margin-top: 18vw;*/
+        }
+    .container1{
+        width:auto;
+        float: none;
+    }
+    .container {
+        float: none;
+        height:auto;
+    }
+    .middlebox{
+        margin-left: 0px;
+    }
+      }
+
+  </style>
+
+</head>
+
+<body>
+  <!-- left menu start-->
+  <div class="hidden-xs topbar left10padding marginBottom text-white  justify-content-flex-end">
+    <div class="left"><img src="icons/WFPicon.png" class="img-circle leftIcon"></div>
+    <span class="titleFont right">WEEKLY FLYER MANAGEMENT SYSTEM</span>
+  </div>
+  </div>
+  <div class="container-fluid hidden-xs leftPadding rightPadding bgColor" style="display: flex; align-items: center;">
+    <div class="top-admin d-flex align-items-center text-white pl-4 " id="admin">
+      <span><i class="fas fa-user-circle fa-lg"></i> Admin</span>
+    </div>
+
+    <div class="d-flex flex-fill justify-content-between px-3"
+      style="display:flex; justify-content: space-between; flex-grow: 1; padding:10px">
+      <div class="text-danger left">Deadline: 2 Day 18 Hour 1 min</div>
+      <div class="left">>Date: 2019. 8. 1 - 8</div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top visible-xs">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+<!--      <span class="text-white" id="logo"><i class="fab fa-wikipedia-w fa-lg"></i></span>-->
+        <div id="logoMobile">
+            <img src="images/hannam-1.png" alt="logo" >
+        </div>
+    </div>
+    <div class="collapse  navbar-collapse" id="myNavbar">
+      <ul class="leftPadding nav navbar-nav">
+         <li class="active">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<!--
+        <li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+-->
+        <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+<!--
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+-->
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item">
+            <div class="item">
+              <div class="indicator"></div>
+                <input type="checkbox" id="A" />
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hidden-xs">
+      <div class="d-flex navbar-expand-lg navbar-dark sidebar p-0 flex-column justify-content-start w-100" id="">
+        <ul class="leftPadding navbar-nav mr-auto flex-column">
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="home.html"><i class="fas fa-home fa-lg"></i> Home(WEB)<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyFlyerOrder.html"><i class="far fa-calendar-alt fa-lg"></i> Weekly Flyer Order</a>
+          </li>
+<li class="nav-item d-flex align-items-center">
+              <div class="indicator"></div>
+              <a class="custom-nav-link" href="otherMart.html"><i class="fab fa-houzz fa-lg"></i> Other Mart</a>
+          </li>
+          <li class="nav-item d-flex align-items-center active">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="flyerHistory.html"><i class="fas fa-desktop fa-lg"></i> Flyer History</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="branchFlyerOrder.html"><i class="fas fa-map-signs fa-lg"></i> Branch Flyer Order</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="salesReport.html"><i class="fas fa-signal fa-lg"></i> Sales Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <div class="indicator"></div>
+            <a class="custom-nav-link" href="weeklyReport.html"><i class="material-icons">
+                list_alt
+              </i> Weekly Report</a>
+          </li>
+          <li class="nav-item d-flex align-items-center" id="item2">
+            <div class="item2">
+              <div class="indicator"></div>
+<!--                <input type="checkbox" id="A" />-->
+                <label for="A"><i class="fas fa-check fa-lg"></i> Confirm</label>
+                <ul>
+                  <li><a href="confirmWeeklyFlyer.html">Weekly Flyer</a></li>
+                  <li><a href="confirmManagerChoice.html">Manager's Choice</a></li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+</div>
+    <div class="hidden-xs d-flex flex-column justify-content-start w-100" id="logo">
+          <img src="images/hannam-1.png" alt="logo">
+        </div>
+  <!-- left menu end-->
+
+  <div class="content">
+
+
+    <div class="middlebox">
+
+      <div class="middlebox1">
+        <div class="search1">
+            <input type="date" name="date" id="date">
+        </div>
+        <div class="box">
+          <div class="container d-flex justify-content-between">
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1064348032.gif" alt="flyer_1_1064348032"></div>
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1204819962.jpg" alt="flyer_1_1204819962"></div>
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1325969963.jpg" alt="flyer_1_1325969963"></div>
+          </div>
+          <div class="container  d-flex justify-content-between">
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1160870081.jpg" alt="flyer_1_1160870081"></div>
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1068264978.gif" alt="flyer_1_1068264978"></div>
+            <div class="container1"><img onclick="onClick(this)" style="max-width:100%;cursor:pointer" class="modal-hover-opacity" src="images/flyer_1_1245703864.gif" alt="flyer_1_1245703864"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="modal01" class="modal" onclick="this.style.display='none'">
+      <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="modal-content">
+        <img id="img01" style="max-width:100%">
+      </div>
+      <div id="caption"></div>
+    </div>
+
+  <script>
+    $(function() {
+      var sBtn = $("ul > li");
+      sBtn.find("a").click(function() {
+        sBtn.removeClass("active");
+        $(this).parent().addClass("active");
+      })
+    })
+  </script>
+
+  <script>
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+  </script>
+
+  <script>
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    document.getElementById("caption").innerHTML = element.alt;
+  }
+  </script>
+
+</body>
+
+</html>
