@@ -1,12 +1,14 @@
 # T-Brothers_IT_Team_Intearn
 Results of Intern Team at T-Brothers Food & Trading LTD.
 
-# Weekly Flyer Management System
+# T-Brothers IT 팀 인턴
 ### 개요
 1. 직위 : 인턴
 2. 직무 : 프로그램 개발
 3. 기간 : 2019/06 ~ 2019/09 (약 3개월)
 4. 역할 : 주간 광고 품목 신청 및 컨펌을 위한 회사 내부 프로그램 개발
+
+# Weekly Flyer Management System
 ### 주요 내용
 - HTML 이용하여 페이지 개발
 - 디자이너의 피드백을 받아 CSS 이용하여 페이지 디자인
