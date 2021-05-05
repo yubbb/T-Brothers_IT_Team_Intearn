@@ -1,7 +1,7 @@
 # T-Brothers_IT_Team_Intearn
 Results of Intern Team at T-Brothers Food & Trading LTD.
 
-# T-brothers IT team 인턴
+# T-Brothers IT team 인턴
 ### 개요
 1. 직위 : 인턴
 2. 직무 : 프로그램 개발
