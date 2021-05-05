@@ -16,6 +16,6 @@ Results of Intern Team at T-Brothers Food & Trading LTD.
 
 
 ### 주의 사항
-T-Brothers의 내부 프로그램이기에 밖으로 유출 시키는 것이 금지되어 있습니다. 
+T-Brothers의 내부 프로그램이기에 밖으로 유출 시키는 것이 엄격히 금지되어 있습니다. 
 
 > 따라서 코드를 첨부하지 못하였습니다.
