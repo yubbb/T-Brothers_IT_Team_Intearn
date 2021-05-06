@@ -1,4 +1,4 @@
-# T-Brothers_IT_Team_Intearn
+# T-Brothers_IT_Team_Intern
 Results of Intern Team at T-Brothers Food & Trading LTD.
 
 # T-Brothers IT 팀 인턴
