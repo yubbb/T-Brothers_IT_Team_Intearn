@@ -10,13 +10,13 @@ Results of Intern Team at T-Brothers Food & Trading LTD.
 
 # Weekly Flyer Management System
 ### 주요 내용
-- T-Brothers 산하의 hannam마트의 주간 광고 관리 시스템
-- T-Brothers, Manna에서 소매점 판매수량을 확인하기 위한 데이터 제공
+1. T-Brothers 산하의 hannam마트의 주간 광고 관리 시스템
+2. T-Brothers, Manna에서 소매점 판매수량을 확인하기 위한 데이터 제공
 
 ### 세부 내용
-- HTML 이용하여 페이지 개발
-- 디자이너의 피드백을 받아 CSS 이용하여 페이지 디자인
-- 주간 광고 품목의 이름 및 가격 직접 입력하여 데이터 베이스 생성
+1. HTML 이용하여 페이지 개발
+2. 디자이너의 피드백을 받아 CSS 이용하여 페이지 디자인
+3. 주간 광고 품목의 이름 및 가격 직접 입력하여 데이터 베이스 생성
 
 ### HTML 구조
 - Home
